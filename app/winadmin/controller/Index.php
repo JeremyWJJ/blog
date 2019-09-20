@@ -10,8 +10,8 @@ class Index extends BaseController
     public function index()
     {
     	// halt(__STATIC__);
-        // return View::fetch('index');
-        return view('index');
+        return View::fetch('index');
+        // return view('index');
     }
 
     public function hello($name = 'ThinkPHP7')
