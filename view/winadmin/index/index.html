@@ -21,7 +21,30 @@
 <body>
     <!-- 桌面 -->
     <div class="winui-desktop">
-
+        <div class="winui-desktop-item" win-id="1" win-url="theme" win-title="主题" win-opentype="1" win-maxopen="-1" style="top: 0px; left: 0px;">
+            <div class="winui-icon winui-icon-font">
+                <i class="fa fa-television fa-fw"></i>
+            </div>
+            <p>主题</p>
+        </div>
+        <div class="winui-desktop-item" win-id="4" win-url="views/demo/introduce.html" win-title="基本说明" win-opentype="2" win-maxopen="-1" style="top: 100px; left: 0px;">
+            <div class="winui-icon winui-icon-font">
+                <i class="fa fa-info-circle fa-fw"></i>
+            </div>
+            <p>基本说明</p>
+        </div>
+        <div class="winui-desktop-item" win-id="2" win-url="views/menu/list_iframe.html" win-title="系统菜单" win-opentype="2" win-maxopen="-1" style="top: 200px; left: 0px;">
+            <div class="winui-icon winui-icon-font">
+                <i class="fa fa-navicon fa-fw"></i>
+            </div>
+            <p>系统菜单</p>
+        </div>
+        <div class="winui-desktop-item" win-id="22" win-url="views/role/list.html" win-title="角色管理" win-opentype="2" win-maxopen="-1" style="top: 300px; left: 0px;">
+            <div class="winui-icon winui-icon-font">
+                <i class="fa fa-th-large fa-fw"></i>
+            </div>
+            <p>角色管理</p>
+        </div>
     </div>
 
     <!-- 开始菜单 -->
@@ -35,7 +58,44 @@
         <!-- 中间导航 -->
         <div class="winui-start-center">
             <div class="layui-side-scroll">
-                <ul class="winui-menu layui-nav layui-nav-tree" lay-filter="winuimenu"></ul>
+                <ul class="winui-menu layui-nav layui-nav-tree" lay-filter="winuimenu">
+                    <li class="layui-nav-item  parent" win-id="23" win-title="系统设置" win-opentype="1" win-icon="fa-cog">
+                        <a>
+                            <div class="winui-menu-icon">
+                                <i class="fa fa-cog fa-fw"></i>
+                            </div>
+                            <span class="winui-menu-name">系统设置</span>
+                            <span class="layui-nav-more"></span>
+                        </a>
+                        <dl class="layui-nav-child">
+                            <dd win-id="2" win-url="views/menu/list_iframe.html" win-title="系统菜单" win-opentype="2" win-icon="fa-navicon">
+                                <a>
+                                    <div class="winui-menu-icon">
+                                        <i class="fa fa-navicon fa-fw"></i>
+                                    </div>
+                                    <span class="winui-menu-name">系统菜单</span>
+                                </a>
+                            </dd>
+                            <dd win-id="19" win-url="/operator/index" win-title="操作员管理" win-opentype="1" win-icon="fa-user">
+                                <a>
+                                    <div class="winui-menu-icon">
+                                        <i class="fa fa-user fa-fw"></i>
+                                    </div>
+                                    <span class="winui-menu-name">操作员管理</span>
+                                </a>
+                            </dd>
+                            <dd win-id="22" win-url="views/role/list.html" win-title="角色管理" win-opentype="2" win-icon="fa-th-large">
+                                <a>
+                                    <div class="winui-menu-icon">
+                                        <i class="fa fa-th-large fa-fw"></i>
+                                    </div>
+                                    <span class="winui-menu-name">角色管理</span>
+                                </a>
+                            </dd>
+                        </dl>
+                    </li>
+                    <!-- <li class="layui-nav-item  parent" win-id="27" win-title="Font Awesome图标展示" win-opentype="1" win-icon="fa-user"><a><div class="winui-menu-icon"><i class="fa fa-user fa-fw"></i></div><span class="winui-menu-name">Font Awesome图标展示</span><span class="layui-nav-more"></span></a><dl class="layui-nav-child"><dd win-id="28" win-title="图片" win-opentype="1" win-icon="fa-photo"><a><div class="winui-menu-icon"><i class="fa fa-photo fa-fw"></i></div><span class="winui-menu-name">图片</span></a></dd><dd win-id="29" win-title="书签" win-opentype="1" win-icon="fa-bookmark"><a><div class="winui-menu-icon"><i class="fa fa-bookmark fa-fw"></i></div><span class="winui-menu-name">书签</span></a></dd><dd win-id="30" win-title="日历" win-opentype="1" win-icon="fa-calendar"><a><div class="winui-menu-icon"><i class="fa fa-calendar fa-fw"></i></div><span class="winui-menu-name">日历</span></a></dd><dd win-id="31" win-title="评论" win-opentype="1" win-icon="fa-comments"><a><div class="winui-menu-icon"><i class="fa fa-comments fa-fw"></i></div><span class="winui-menu-name">评论</span></a></dd><dd win-id="32" win-title="邮件" win-opentype="1" win-icon="fa-envelope"><a><div class="winui-menu-icon"><i class="fa fa-envelope fa-fw"></i></div><span class="winui-menu-name">邮件</span></a></dd><dd win-id="33" win-title="桌面" win-opentype="1" win-icon="fa-desktop"><a><div class="winui-menu-icon"><i class="fa fa-desktop fa-fw"></i></div><span class="winui-menu-name">桌面</span></a></dd><dd win-id="34" win-title="下载" win-opentype="1" win-icon="fa-download"><a><div class="winui-menu-icon"><i class="fa fa-download fa-fw"></i></div><span class="winui-menu-name">下载</span></a></dd><dd win-id="35" win-title="设置" win-opentype="1" win-icon="fa-cog"><a><div class="winui-menu-icon"><i class="fa fa-cog fa-fw"></i></div><span class="winui-menu-name">设置</span></a></dd><dd win-id="36" win-title="信息" win-opentype="1" win-icon="fa-info-circle"><a><div class="winui-menu-icon"><i class="fa fa-info-circle fa-fw"></i></div><span class="winui-menu-name">信息</span></a></dd><dd win-id="37" win-title="图表1" win-opentype="1" win-icon="fa-line-chart"><a><div class="winui-menu-icon"><i class="fa fa-line-chart fa-fw"></i></div><span class="winui-menu-name">图表1</span></a></dd><dd win-id="38" win-title="图表2" win-opentype="1" win-icon="fa-bar-chart"><a><div class="winui-menu-icon"><i class="fa fa-bar-chart fa-fw"></i></div><span class="winui-menu-name">图表2</span></a></dd><dd win-id="39" win-title="图表3" win-opentype="1" win-icon="fa-pie-chart"><a><div class="winui-menu-icon"><i class="fa fa-pie-chart fa-fw"></i></div><span class="winui-menu-name">图表3</span></a></dd><dd win-id="40" win-title="标签" win-opentype="1" win-icon="fa-tags"><a><div class="winui-menu-icon"><i class="fa fa-tags fa-fw"></i></div><span class="winui-menu-name">标签</span></a></dd><dd win-id="41" win-title="垃圾" win-opentype="1" win-icon="fa-trash"><a><div class="winui-menu-icon"><i class="fa fa-trash fa-fw"></i></div><span class="winui-menu-name">垃圾</span></a></dd><dd win-id="42" win-title="医疗" win-opentype="1" win-icon="fa-medkit"><a><div class="winui-menu-icon"><i class="fa fa-medkit fa-fw"></i></div><span class="winui-menu-name">医疗</span></a></dd></dl></li><li class="layui-nav-item  parent " win-id="43" win-title="Font Awesome第三方LOGO" win-opentype="1" win-icon="fa-edge"><a><div class="winui-menu-icon"><i class="fa fa-edge fa-fw"></i></div><span class="winui-menu-name">Font Awesome第三方LOGO</span><span class="layui-nav-more"></span></a><dl class="layui-nav-child"><dd win-id="44" win-title="苹果" win-opentype="1" win-icon="fa-apple"><a><div class="winui-menu-icon"><i class="fa fa-apple fa-fw"></i></div><span class="winui-menu-name">苹果</span></a></dd><dd win-id="45" win-title="Google Chrome" win-opentype="1" win-icon="fa-chrome"><a><div class="winui-menu-icon"><i class="fa fa-chrome fa-fw"></i></div><span class="winui-menu-name">Google Chrome</span></a></dd><dd win-id="46" win-title="Microsoft Edge" win-opentype="1" win-icon="fa-edge"><a><div class="winui-menu-icon"><i class="fa fa-edge fa-fw"></i></div><span class="winui-menu-name">Microsoft Edge</span></a></dd><dd win-id="47" win-title="腾讯QQ" win-opentype="1" win-icon="fa-qq"><a><div class="winui-menu-icon"><i class="fa fa-qq fa-fw"></i></div><span class="winui-menu-name">腾讯QQ</span></a></dd><dd win-id="48" win-title="新浪微博" win-opentype="1" win-icon="fa-weibo"><a><div class="winui-menu-icon"><i class="fa fa-weibo fa-fw"></i></div><span class="winui-menu-name">新浪微博</span></a></dd><dd win-id="49" win-title="Microsoft Windows" win-opentype="1" win-icon="fa-windows"><a><div class="winui-menu-icon"><i class="fa fa-windows fa-fw"></i></div><span class="winui-menu-name">Microsoft Windows</span></a></dd><dd win-id="50" win-title="微信" win-opentype="1" win-icon="fa-wechat"><a><div class="winui-menu-icon"><i class="fa fa-wechat fa-fw"></i></div><span class="winui-menu-name">微信</span></a></dd><dd win-id="51" win-title="Skype" win-opentype="1" win-icon="fa-skype"><a><div class="winui-menu-icon"><i class="fa fa-skype fa-fw"></i></div><span class="winui-menu-name">Skype</span></a></dd><dd win-id="52" win-title="Github" win-opentype="1" win-icon="fa-github"><a><div class="winui-menu-icon"><i class="fa fa-github fa-fw"></i></div><span class="winui-menu-name">Github</span></a></dd></dl></li><li class="layui-nav-item  parent " win-id="53" win-title="自定义图片菜单" win-opentype="1" win-icon="images/logo_100.png"><a><div class="winui-menu-icon"><img src="images/logo_100.png"></div><span class="winui-menu-name">自定义图片菜单</span><span class="layui-nav-more"></span></a><dl class="layui-nav-child"><dd win-id="54" win-title="腾讯QQ" win-opentype="1" win-icon="images/qq_32.png"><a><div class="winui-menu-icon"><img src="images/qq_32.png"></div><span class="winui-menu-name">腾讯QQ</span></a></dd><dd win-id="55" win-title="新浪微博" win-opentype="1" win-icon="images/weibo_32.png"><a><div class="winui-menu-icon"><img src="images/weibo_32.png"></div><span class="winui-menu-name">新浪微博</span></a></dd><dd win-id="56" win-title="QQ空间" win-opentype="1" win-icon="images/qzone_32.png"><a><div class="winui-menu-icon"><img src="images/qzone_32.png"></div><span class="winui-menu-name">QQ空间</span></a></dd></dl></li><span class="layui-nav-bar" style="top: 17.5px; height: 0px; opacity: 0;"></span> -->
+                </ul>
             </div>
         </div>
         <!-- 右边磁贴 -->
