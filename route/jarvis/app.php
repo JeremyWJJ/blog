@@ -10,9 +10,14 @@
 // +----------------------------------------------------------------------
 use think\facade\Route;
 
-Route::get('think', function () {
-    return 'hello,ThinkPHP6!';
-});
+// Route::get('think', function () {
+//     return 'hello,ThinkPHP6!';
+// });
+
+//登录页
+Route::any('login', 'Login/index');
+//登录操作
+Route::any('dologin/<username>/<password>' , 'Login/login');
 
 Route::any('hello/<name?>', 'Index/hello');
 

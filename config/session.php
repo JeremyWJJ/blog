@@ -16,4 +16,6 @@ return [
     'expire'         => 3600,
     // 前缀
     'prefix'         => 'winadmin',
+
+    'serialize'    =>    ['json_encode', 'json_decode'],
 ];

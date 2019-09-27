@@ -1,6 +1,6 @@
 <?php
 
-namespace app\jwin\middleware;
+namespace app\jarvis\middleware;
 
 use think\facade\Session;
 use think\facade\Cookie;
@@ -14,8 +14,8 @@ class SessionCookie
     public function handle($request, \Closure $next)
     {
 
-        if ($request->param('name') == 'session') {
-            return redirect('Index/hello');
+        if (Session::has('admin')) {
+            return redirect('Login/index');
         }
 
         return $next($request);

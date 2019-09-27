@@ -1,7 +1,7 @@
 <?php
 namespace app\winadmin\controller;
 
-use app\BaseController;
+use app\winadmin\controller\BaseController;
 use think\facade\View;
 
 class Index extends BaseController

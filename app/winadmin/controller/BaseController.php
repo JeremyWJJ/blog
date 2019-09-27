@@ -1,7 +1,7 @@
 <?php
 declare (strict_types = 1);
 
-namespace app;
+namespace app\winadmin\controller;
 
 use think\App;
 use think\exception\ValidateException;
@@ -40,7 +40,7 @@ abstract class BaseController
      * 控制器中间件
      * @var array
      */
-    protected $middleware = ['app\winadmin\middleware\SessionCookie','app\winadmin\middleware\Power'];
+    protected $middleware = ['app\winadmin\middleware\SessionCookie' , 'app\winadmin\middleware\Power'];
 
 
 

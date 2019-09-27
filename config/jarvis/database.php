@@ -53,6 +53,8 @@ return [
             'break_reconnect'   => false,
             // 字段缓存路径
             'schema_cache_path' => app()->getRuntimePath() . 'schema' . DIRECTORY_SEPARATOR,
+            
+            'fields_cache'     => true,
         ],
 
         // 更多的数据库配置信息
