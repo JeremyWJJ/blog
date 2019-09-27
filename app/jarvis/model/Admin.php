@@ -30,11 +30,13 @@ class Admin extends Model
 
 
     /**
-     * 单条查询admin表数据（全部直等查询）
-     * @param  [type] $links [description]
-     * @return [type]        [description]
+     * 验证用户登录信息  
+     * @param  [type]  $user   [description]
+     * @param  [type]  $pass   [description]
+     * @param  integer $status [description]
+     * @return [type]          [description]
      */
-    public function getUserInfoByLinks($user , $pass , $status = 1)
+    public function checkUserInfo($user , $pass , $status = 1)
     {
     	if($user){
     		$map[] = array('username' , '=' , $user);

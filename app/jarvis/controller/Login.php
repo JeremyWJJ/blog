@@ -6,8 +6,7 @@ use think\facade\Request;
 use think\facade\View;
 //model
 use app\jarvis\model\Admin;
-use think\facade\Session;
-use think\facade\Cookie;
+
 
 
 class Login
@@ -29,22 +28,19 @@ class Login
      */
     public function login(Admin $Admin)
     {
+        
         //获取参数、拼条件
         $params = Request::param();
 
-        //根据username获取用户信息
-        $userInfo = $Admin->getUserInfoByLinks($params['username'] , $params['password']);
+        //根据username验证用户信息
+        $userInfo = $Admin->checkUserInfo($params['username'] , $params['password']);
 
         if(empty($userInfo->id)) 
-            return json(array('code'=>10000 , 'msg'=>'用户名或密码错误' , 'data'=>array()));
+            return Jerror('用户名或密码错误' , array('username' => $params['username']));
 
-        //设置session
-        Session::set('admin',$userInfo);
-        //设置cookie
-        $cookie_admin_value = json_encode(array('name'=>$userInfo->username , 'nickname'=>$userInfo->nickname , 'email'=>$userInfo->email , 'phone'=>$userInfo->phone));
-        Cookie::set('admin' , $cookie_admin_value , 36000);
+        login_session_cookie('admin' , $userInfo);
 
-        return json(array('code'=>1 , 'msg'=>'登录成功' , 'data'=>array()));
+        return Jsuccess('登录成功');
     }
 
 
