@@ -18,6 +18,9 @@ class Login
      */
     public function index()
     {
+        if (Session::has('admin')) {
+            return redirect('Index/index');
+        }
         return View::fetch('index');
     }
 
