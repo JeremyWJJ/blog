@@ -18,6 +18,8 @@ use think\facade\Route;
 Route::any('login', 'Login/index');
 //登录操作
 Route::any('dologin/<username>/<password>' , 'Login/login');
+//首页
+Route::any('index', 'Index/index');
 
 Route::any('hello/<name?>', 'Index/hello');
 
