@@ -3,6 +3,7 @@ namespace app\jarvis\controller;
 
 use app\jarvis\controller\BaseController;
 use think\facade\View;
+use think\facade\Cookie;
 
 class Index extends BaseController
 {
@@ -10,7 +11,11 @@ class Index extends BaseController
 
     public function index()
     {
-    	// halt('这是登录后的首页');
+    	$admin = Cookie::get('admin');
+    	View::assign([
+    		'name' => $admin->nickname ?? $admin->name
+    	]);
+    	halt($admin);
         return view('main');
     }
 
