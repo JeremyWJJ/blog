@@ -39,7 +39,7 @@ function add_log($name , $operate)
     $log = [
         'name'      => $name,
         'ip'        => $_SERVER['REMOTE_ADDR'],
-        'address'   => '北京',
+        'address'   => '',
         'operate'	=> $operate,
         'ctime'     => date('Y-m-d H:i:s',time())
     ];
