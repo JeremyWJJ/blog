@@ -44,6 +44,8 @@ class Login
 
         login_session_cookie('admin' , $userInfo);
 
+        add_log($params['username'] , 'login');
+
         return Jsuccess('登录成功');
     }
 

@@ -55,4 +55,6 @@ class Admin extends Model
     	// return Admin::getLastSql();
     	return $info;
     }
+
+
 }

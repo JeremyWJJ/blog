@@ -25,3 +25,22 @@ function login_session_cookie($name , $info)
     Cookie::set($name , $cookie_admin_value , 36000);
 }
 
+
+
+
+/**
+ * 登录信息存入日志
+ * @param  [type] $name [用户名]
+ * @return [type]       [description]
+ */
+function add_log($name , $operate)
+{
+    $log = new Log;
+    $log->save([
+        'name'      => $name,
+        'ip'        => $_SERVER['REMOTE_ADDR'],
+        'address'   => '北京',
+        'operate'	=> $operate,
+        'ctime'     => date('Y-m-d H:i:s',time())
+    ]);
+}
