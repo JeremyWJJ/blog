@@ -11,11 +11,12 @@ class Index extends BaseController
 
     public function index()
     {
-    	$admin = Cookie::get('admin');
+	$cookie = Cookie::get('admin');
+	$admin = json_decode($cookie);
     	View::assign([
-    		'name' => $admin->nickname ?? $admin->name
-    	]);
-    	halt($admin);
+		'name'  => $admin->nickname ?? $admin->name,
+		'title' => '贾维斯 Javis'
+	]);
         return view('main');
     }
 
