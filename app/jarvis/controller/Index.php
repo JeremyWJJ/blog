@@ -10,8 +10,8 @@ class Index extends BaseController
 
     public function index()
     {
-    	halt('这是登录后的首页');
-        return view('index');
+    	// halt('这是登录后的首页');
+        return view('main');
     }
 
 

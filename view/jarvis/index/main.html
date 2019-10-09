@@ -1,35 +1,11 @@
-﻿<!--
-
- @Name：不落阁后台模板源码
- @Author：Absolutely
- @Site：http://www.lyblogs.cn
-
- -->
-
-
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="utf-8" />
-    <title>不落阁后台管理系统</title>
-    <link rel="shortcut icon" href="../images/Logo_40.png" type="image/x-icon">
-    <!-- layui.css -->
-    <link href="../plugin/layui/css/layui.css" rel="stylesheet" />
-    <!-- font-awesome.css -->
-    <link href="../plugin/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
-    <!-- animate.css -->
-    <link href="../css/animate.min.css" rel="stylesheet" />
-    <!-- 本页样式 -->
-    <link href="../css/main.css" rel="stylesheet" />
-</head>
-<body>
+﻿    {include file="public/header" /}
+    
     <div class="layui-layout layui-layout-admin">
         <!--顶部-->
         <div class="layui-header">
             <div class="ht-console">
                 <div class="ht-user">
-                    <img src="../images/Logo_40.png" />
+                    <img src="http://jarvis.hexintong.top/images/Logo_40.png" />
                     <a class="ht-user-name">超级管理员</a>
                 </div>
             </div>
@@ -238,12 +214,12 @@
         </div>
     </div>
     <!-- layui.js -->
-    <script src="../plugin/layui/layui.js"></script>
+    <script src="http://jarvis.hexintong.top/plugin/layui/layui.js"></script>
     <!-- layui规范化用法 -->
     <script type="text/javascript">
         layui.config({
-            base: '../js/'
+            base: 'http://jarvis.hexintong.top/js/'
         }).use('main');
     </script>
-</body>
-</html>
+
+    {include file="public/footer" /}
