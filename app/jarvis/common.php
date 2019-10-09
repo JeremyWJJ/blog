@@ -2,6 +2,7 @@
 // 应用公共文件
 use think\facade\Session;
 use think\facade\Cookie;
+use think\facade\Db;
 
 function test()
 {
@@ -35,12 +36,12 @@ function login_session_cookie($name , $info)
  */
 function add_log($name , $operate)
 {
-    $log = new Log;
-    $log->save([
+    $log = [
         'name'      => $name,
         'ip'        => $_SERVER['REMOTE_ADDR'],
         'address'   => '北京',
         'operate'	=> $operate,
         'ctime'     => date('Y-m-d H:i:s',time())
-    ]);
+    ];
+    Db::name('log')->save($log);
 }
