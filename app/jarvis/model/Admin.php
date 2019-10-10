@@ -57,4 +57,12 @@ class Admin extends Model
     }
 
 
+    public function getTest()
+    {
+        $users = Db::table('admin')->leftJoin('log','admin.id = log.user_id')->where('admin.id','1')->select();
+        return $users;
+    }
+
+   
+
 }

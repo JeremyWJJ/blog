@@ -21,7 +21,7 @@ class IndexModel extends Model
 
     public function getUserInfoByLinks()
     {
-    	$info = Db::table('he_admin')->where('id', 2)->find();
+    	$info = Db::table('admin')->where('id', 2)->find();
     	return $info;
     }
 }

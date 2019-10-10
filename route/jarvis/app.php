@@ -13,6 +13,7 @@ use think\facade\Route;
 // Route::get('think', function () {
 //     return 'hello,ThinkPHP6!';
 // });
+Route::any('test','Test/test');
 
 //登录页
 Route::any('login', 'Login/index');

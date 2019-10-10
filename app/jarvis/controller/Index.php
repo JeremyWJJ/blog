@@ -26,7 +26,7 @@ class Index extends BaseController
 
     public function chess()
     {
-    	halt('棋子');
+    	return $this->hasMany(Log::class);
     }
 
 
