@@ -36,7 +36,9 @@ function login_session_cookie($name , $info)
  */
 function add_log($name , $operate)
 {
+    $user_id = Session::get('admin.id');
     $log = [
+        'user_id'   => $user_id,
         'name'      => $name,
         'ip'        => $_SERVER['REMOTE_ADDR'],
         'address'   => '',

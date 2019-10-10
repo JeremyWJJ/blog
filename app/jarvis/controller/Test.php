@@ -15,7 +15,7 @@ class Test
 
     public function test(Admin $Admin)
     {
-        return $Admin->getTest();
+        halt('123test');
     }
 
 

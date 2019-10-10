@@ -12,15 +12,18 @@ class Index extends BaseController
 	 * 首页
 	 * @return [type] [description]
 	 */
-    public function index()
+    public function index(IndexModel $index)
     {
 		$cookie = Cookie::get('admin');
 		$admin = json_decode($cookie);
+		$info = $index->getIndex($admin);
+		halt($info);
 	    View::assign([
 			'name'  => $admin->nickname ?? $admin->name,
 			'title' => '贾维斯 Javis'
 		]);
-	        return view('main');
+
+	    return view('main');
     }
 
 

@@ -19,7 +19,7 @@ class IndexModel extends Model
         'utime'     => 'timestamp',
     ];
 
-    public function getUserInfoByLinks()
+    public function getIndex($admin)
     {
     	$info = Db::table('admin')->where('id', 2)->find();
     	return $info;

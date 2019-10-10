@@ -55,14 +55,6 @@ class Admin extends Model
     	// return Admin::getLastSql();
     	return $info;
     }
-
-
-    public function getTest()
-    {
-        $users = Db::table('admin')->leftJoin('log','admin.id = log.user_id')->where('admin.id','1')->select();
-        return $users;
-    }
-
    
 
 }
