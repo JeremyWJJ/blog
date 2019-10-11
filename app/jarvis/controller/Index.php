@@ -4,6 +4,7 @@ namespace app\jarvis\controller;
 use app\jarvis\controller\BaseController;
 use think\facade\View;
 use think\facade\Cookie;
+use app\jarvis\model\IndexModel;
 
 class Index extends BaseController
 {
@@ -14,16 +15,16 @@ class Index extends BaseController
 	 */
     public function index(IndexModel $index)
     {
-		$cookie = Cookie::get('admin');
-		$admin = json_decode($cookie);
-		$info = $index->getIndex($admin);
-		halt($info);
-	    View::assign([
-			'name'  => $admin->nickname ?? $admin->name,
-			'title' => '贾维斯 Javis'
-		]);
+        $cookie = Cookie::get('admin');
+        $admin = json_decode($cookie);
+	$info = $index->getIndex($admin);
+	halt($info);
+	View::assign([
+	    'name'  => $admin->nickname ?? $admin->name,
+	    'title' => '贾维斯 Javis'
+	]);
 
-	    return view('main');
+	return view('main');
     }
 
 
