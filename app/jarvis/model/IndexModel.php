@@ -38,7 +38,7 @@ class IndexModel extends Model
         $last = Db::table('log')
         ->leftJoin('admin','admin.id = log.user_id')
         ->where('admin.username',$admin['name'])
-        ->order('ctime DESC')
+        ->order('ctime','desc')
         ->findOrEmpty();
 
     	return array(
