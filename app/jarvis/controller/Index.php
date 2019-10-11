@@ -22,7 +22,11 @@ class Index extends BaseController
 	    halt($info);
 	    View::assign([
 	        'name'  => $admin->nickname ?? $admin->name,
-	        'title' => '贾维斯 Javis'
+	        'title' => '贾维斯 Javis',
+	        'admin' => $info['admin'],
+	        'profession' => $info['profession'],
+	        'race'  => $info['race'],
+	        'login' => $info['login']
 	    ]);
 
 	    return view('main');
