@@ -17,14 +17,14 @@ class Index extends BaseController
     {
         $cookie = Cookie::get('admin');
         $admin = json_decode($cookie);
-	$info = $index->getIndex($admin);
-	halt($info);
-	View::assign([
-	    'name'  => $admin->nickname ?? $admin->name,
-	    'title' => '贾维斯 Javis'
-	]);
+        //各项统计
+	    $info = $index->getIndex($admin);
+	    View::assign([
+	        'name'  => $admin->nickname ?? $admin->name,
+	        'title' => '贾维斯 Javis'
+	    ]);
 
-	return view('main');
+	    return view('main');
     }
 
 
