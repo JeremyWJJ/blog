@@ -19,7 +19,7 @@ class Index extends BaseController
         $admin = json_decode($cookie);
         //各项统计
 	    $info = $index->getIndex($admin);
-	    halt($info);
+	    // halt($info);
 	    View::assign([
 	        'name'  => $admin->nickname ?? $admin->name,
 	        'title' => '贾维斯 Javis',

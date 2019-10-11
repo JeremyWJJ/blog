@@ -35,18 +35,18 @@ class IndexModel extends Model
         ->count();
 
         //该管理员上次登录信息
-        $last = Db::table('log')
-        ->leftJoin('admin','admin.id = log.user_id')
-        ->where('admin.username',$admin['name'])
-        ->order('ctime','desc')
-        ->find();
-        halt($last);
+        // $last = Db::table('log')
+        // ->leftJoin('admin','admin.id = log.user_id')
+        // ->where('admin.username',$admin['name'])
+        // ->order('ctime','desc')
+        // ->find();
+        // halt($last);
     	return array(
             'admin' => $admin_num,
             'profession' => $profession_num,
             'race' => $race_num,
             'login' => $login_num,
-            'last' => $last
+            // 'last' => $last
         );
     }
 }
