@@ -33,7 +33,7 @@ class IndexModel extends Model
         ->whereTime('ctime' , '>=' , date('Y-m-d 00:00:00',time()))
         ->whereTime('ctime' , '<' , date('Y-m-d 00:00:00',strtotime('+1 day')))
         ->count();
-
+        halt($admin);
         //该管理员上次登录信息
         $last = Db::table('log')
         ->leftJoin('admin','admin.id = log.user_id')
@@ -46,8 +46,7 @@ class IndexModel extends Model
             'admin' => $admin_num,
             'profession' => $profession_num,
             'race' => $race_num,
-            'login' => $login_num,
-            'last' => $last
+            'login' => $login_num
         );
     }
 }
