@@ -19,14 +19,16 @@ class Index extends BaseController
         $admin = json_decode($cookie);
         //各项统计
 	    $info = $index->getIndex($admin);
-	    halt($info);
 	    View::assign([
 	        'name'  => $admin->nickname ?? $admin->name,
 	        'title' => '贾维斯 Javis',
 	        'admin' => $info['admin'],
 	        'profession' => $info['profession'],
 	        'race'  => $info['race'],
-	        'login' => $info['login']
+	        'login' => $info['login'],
+	        'ip'    => $info['last']['ip'] ?? '0:0:0:0',
+	        'ipTime'=> $info['last']['ctime'] ?? '未知'
+
 	    ]);
 
 	    return view('main');
