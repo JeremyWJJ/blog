@@ -33,20 +33,20 @@ class IndexModel extends Model
         ->whereTime('ctime' , '>=' , date('Y-m-d 00:00:00',time()))
         ->whereTime('ctime' , '<' , date('Y-m-d 00:00:00',strtotime('+1 day')))
         ->count();
-        halt($admin);
+
         //该管理员上次登录信息
         $last = Db::table('log')
         ->leftJoin('admin','admin.id = log.user_id')
-        ->where('admin.username',$admin['name'])
+        ->where('admin.username',$admin->name)
         ->order('ctime','desc')
-        ->fetchSql(true)
         ->find();
-        halt($last);
+
     	return array(
             'admin' => $admin_num,
             'profession' => $profession_num,
             'race' => $race_num,
-            'login' => $login_num
+            'login' => $login_num,
+            'last' => $last
         );
     }
 }
