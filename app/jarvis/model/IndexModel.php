@@ -40,13 +40,13 @@ class IndexModel extends Model
         ->where('admin.username',$admin['name'])
         ->order('ctime DESC')
         ->findOrEmpty();
-        return $last;
 
     	return array(
             'admin' => $admin_num,
             'profession' => $profession_num,
             'race' => $race_num,
-            'login' => $login_num
+            'login' => $login_num,
+            'last' => $last
         );
     }
 }
