@@ -31,10 +31,11 @@ class IndexModel extends Model
         $login_num = Db::table('log')
         ->where('operate','login')
         ->whereDay('ctime')
+        ->fetchSql()
         ->count();
-        Db::listen(function($sql, $runtime, $master) {
-            return $sql;
-        });
-    	return $info;
+        // Db::listen(function($sql, $runtime, $master) {
+        //     return $sql;
+        // });
+    	return $login_num;
     }
 }
