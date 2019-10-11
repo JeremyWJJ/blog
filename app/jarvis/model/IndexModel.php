@@ -21,7 +21,20 @@ class IndexModel extends Model
 
     public function getIndex($admin)
     {
-    	$info = Db::table('admin')->where('id', 2)->find();
+        //管理员数量
+    	$admin_num = Db::table('admin')->count();
+        //职业数量
+        $profession_num = Db::table('profession')->count();
+        //种族数量
+        $race_num = Db::table('race')->count();
+        //今天登录数
+        $login_num = Db::table('log')
+        ->where('operate','login')
+        ->whereDay('ctime')
+        ->count();
+        Db::listen(function($sql, $runtime, $master) {
+            return $sql;
+        });
     	return $info;
     }
 }
