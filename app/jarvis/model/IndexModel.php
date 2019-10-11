@@ -39,7 +39,7 @@ class IndexModel extends Model
         ->leftJoin('admin','admin.id = log.user_id')
         ->where('admin.username',$admin['name'])
         ->order('ctime','desc')
-        ->findOrEmpty();
+        ->find();
         halt($last);
     	return array(
             'admin' => $admin_num,
