@@ -39,6 +39,7 @@ class IndexModel extends Model
         ->leftJoin('admin','admin.id = log.user_id')
         ->where('admin.username',$admin['name'])
         ->order('ctime','desc')
+        ->fetchSql(true)
         ->find();
         halt($last);
     	return array(
@@ -46,7 +47,7 @@ class IndexModel extends Model
             'profession' => $profession_num,
             'race' => $race_num,
             'login' => $login_num,
-            // 'last' => $last
+            'last' => $last
         );
     }
 }
