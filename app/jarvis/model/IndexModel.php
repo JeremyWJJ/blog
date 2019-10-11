@@ -34,12 +34,7 @@ class IndexModel extends Model
         ->whereTime('ctime' , '<' , date('Y-m-d 00:00:00',strtotime('+1 day')))
         ->fetchSql(true)
         ->count();
-        
-    	return {
-            'admin' : $admin_num,
-            'profession' : $profession_num,
-            'race' : $race_num,
-            'login' : $login_num
-        };
+
+    	return $login_num;
     }
 }
