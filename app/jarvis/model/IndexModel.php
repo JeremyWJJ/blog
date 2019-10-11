@@ -30,12 +30,10 @@ class IndexModel extends Model
         //今天登录数
         $login_num = Db::table('log')
         ->where('operate','login')
-        ->whereDay('ctime')
-        ->fetchSql()
+        ->whereTime('ctime','>=',date('YYYY-MM-DD 00:00:00',time()))
+        ->whereTime('ctime','<',date('YYYY-MM-DD 00:00:00',strtotime('+1 day')))
+        ->fetchSql(true)
         ->count();
-        // Db::listen(function($sql, $runtime, $master) {
-        //     return $sql;
-        // });
     	return $login_num;
     }
 }
