@@ -22,7 +22,7 @@ Route::any('dologin/<username>/<password>' , 'Login/login');
 //首页
 Route::any('index', 'Index/index');
 //棋子管理
-Route::any('chess', 'Index/chess');
+Route::any('chess', 'Index/chessView');
 
 Route::any('hello/<name?>', 'Index/hello');
 

@@ -35,15 +35,11 @@ class Index extends BaseController
     }
 
 
-    public function chess()
+    public function chessView()
     {
-    	return $this->hasMany(Log::class);
+    	
+    	return view('datalist');
     }
 
 
-
-
 }
-
-
-
