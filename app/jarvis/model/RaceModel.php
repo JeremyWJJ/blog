@@ -12,24 +12,25 @@ class RaceModel extends Model
         'name'  => 'string',
         'eng'   => 'string',
         'status'   => 'int'
-        'version'  => 'string'
     ];
+    // 设置废弃字段
+    protected $disuse = [ 'version' ];
 
-    public function getRaceList($id , $name , $status)
+    public function getRaceList($links)
     {
         $where = array();
-        if($id){
-            $where[] = array('id' , $id);
+        if(isset($links['id'])){
+            $where[] = array('id' , '=' , $links['id']);
         }
-        if($name){
-            $where[] = array('name' , 'like' , '%'.$name.'%');
+        if(isset($links['name'])){
+            $where[] = array('name' , 'like' , '%'.$links['name'].'%');
         }
-        if($stauts){
-            $where[] = array('status' , $status);
+        if(isset($links['status'])){
+            $where[] = array('status' , '='  , $links['status']);
         }
         
         $list = Db::table('race')
-        ->where($where)
+	->where($where)
         ->select();
 
     	return $list;
