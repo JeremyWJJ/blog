@@ -16,7 +16,7 @@
                         <div class="layui-inline">
                             <label class="layui-form-label">种族</label>
                             <div class="layui-input-inline">
-                                <select name="race" class="race">
+                                <select name="race" class="race" lay-filter="race">
                                     <option value=""></option>
                                     
                                 </select>
@@ -123,13 +123,18 @@ layui.use(['form', 'layer', 'jquery'], function () {
     layer = layui.layer;
     var inter = "http://www.hexintong.top/"
     $.ajax({
-        'url': inter + "race",
-        'dataType': 'json',
-        'type': 'get',
-        'success': function (res) {
+        url: inter + "race",
+        dataType: 'json',
+        type: 'get',
+        success: function (res) {
             console.log(res)
         }
     })
+
+    form.on('select(race)', function (data) {
+        
+    }
+    
 }
 </script>
 </html>
