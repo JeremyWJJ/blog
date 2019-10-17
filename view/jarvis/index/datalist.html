@@ -16,7 +16,7 @@
                         <div class="layui-inline">
                             <label class="layui-form-label">种族</label>
                             <div class="layui-input-inline">
-                                <select name="race" class="race" lay-filter="race">
+                                <select name="race" id="race" class="race" lay-filter="race">
                                     <option value=""></option>
                                     
                                 </select>
@@ -113,7 +113,7 @@
     layui.use(['form', 'layer', 'jquery'], function () {
         var $ = layui.jquery;
         var form = layui.form;
-        layer = layui.layer;
+      
         var inter = "http://www.hexintong.top/jarvis/"
         $.ajax({
             url: inter + "race",
@@ -125,7 +125,7 @@
                     // if (code == val.id) {
                         // $('#flightcode').append('<option  value="' + val.id + '" selected>' + val.airname + '</option>')
                     // } else {
-                        $('.race').append('<option  value="' + val.id + '">' + val.name + '</option>')
+                        $('#race').append('<option  value="' + val.id + '">' + val.name + '</option>')
                     // }
                     form.render('select'); //这个很重要
                 });
