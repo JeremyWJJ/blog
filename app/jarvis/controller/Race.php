@@ -23,8 +23,8 @@ class Race extends BaseController
 
     public function getRaces(RaceModel $raceModel)
     {
-	$params = Request::param();
-	$list = $raceModel -> getRaceList($params);
+	    $params = Request::param();
+	    $list = $raceModel -> getRaceList($params);
     	return json($list);
     }
 

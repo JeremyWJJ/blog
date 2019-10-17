@@ -116,4 +116,20 @@
         }).use('datalist');
     </script>
 </body>
+<script>
+layui.use(['form', 'layer', 'jquery'], function () {
+    var $ = layui.jquery;
+    var form = layui.form,
+    layer = layui.layer;
+    var inter = "http://www.hexintong.top/"
+    $.ajax({
+        'url': inter + "race",
+        'dataType': 'json',
+        'type': 'get',
+        'success': function (res) {
+            console.log(res)
+        }
+    })
+}
+</script>
 </html>

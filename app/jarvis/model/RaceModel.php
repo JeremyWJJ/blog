@@ -30,7 +30,7 @@ class RaceModel extends Model
         }
         
         $list = Db::table('race')
-	->where($where)
+	    ->where($where)
         ->select();
 
     	return $list;
