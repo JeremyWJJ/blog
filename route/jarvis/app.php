@@ -23,6 +23,8 @@ Route::any('dologin/<username>/<password>' , 'Login/login');
 Route::any('index', 'Index/index');
 //棋子管理
 Route::any('chess', 'Index/chessView');
+//种族列表
+Route::any('race/<id?>/<name?>/<status?>' , 'Race/getRaces');
 
 Route::any('hello/<name?>', 'Index/hello');
 
