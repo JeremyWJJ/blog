@@ -7,6 +7,8 @@ use think\App;
 use think\exception\ValidateException;
 use think\Validate;
 
+define("JARVIS_URL",'http://jarvis.hexintong.top/');
+
 /**
  * 控制器基础类
  */

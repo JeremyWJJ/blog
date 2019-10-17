@@ -27,7 +27,8 @@ class Index extends BaseController
 	        'race'  => $info['race'],
 	        'login' => $info['login'],
 	        'ip'    => $info['last']['ip'] ?? '0:0:0:0',
-	        'ipTime'=> $info['last']['ctime'] ?? '未知'
+		'ipTime'=> $info['last']['ctime'] ?? '未知',
+		'jarvis' => JARVIS_URL
 
 	    ]);
 
