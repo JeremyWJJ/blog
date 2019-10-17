@@ -110,34 +110,34 @@
     <!-- layui.js -->
     <script src="http://jarvis.hexintong.top/plugin/layui/layui.js"></script>
     <script>
-    // layui.use(['form', 'layer', 'jquery'], function () {
-    //     var $ = layui.jquery;
-    //     var form = layui.form;
+    layui.use(['form', 'layer', 'jquery'], function () {
+        var $ = layui.jquery;
+        var form = layui.form;
       
-    //     var inter = "http://www.hexintong.top/jarvis/"
-    //     $.ajax({
-    //         url: inter + "race",
-    //         dataType: 'json',
-    //         type: 'get',
-    //         success: function (res) {
-    //             console.log(res)
-    //             $.each(res, function (i, val) {
-    //                 // if (code == val.id) {
-    //                     // $('#flightcode').append('<option  value="' + val.id + '" selected>' + val.airname + '</option>')
-    //                 // } else {
-    //                     $('#race').append('<option  value="' + val.id + '">' + val.name + '</option>')
-    //                 // }
-    //                 form.render('select'); //这个很重要
-    //             });
+        var inter = "http://www.hexintong.top/jarvis/"
+        $.ajax({
+            url: inter + "race",
+            dataType: 'json',
+            type: 'get',
+            success: function (res) {
+                console.log(res)
+                $.each(res, function (i, val) {
+                    // if (code == val.id) {
+                        // $('#flightcode').append('<option  value="' + val.id + '" selected>' + val.airname + '</option>')
+                    // } else {
+                        $('#race').append('<option  value="' + val.id + '">' + val.name + '</option>')
+                    // }
+                    form.render('select'); //这个很重要
+                });
 
-    //         }
-    //     })
+            }
+        })
 
-    //     // form.on('select(race)', function (data) {
+        // form.on('select(race)', function (data) {
             
-    //     // });
+        // });
         
-    // })
+    })
     </script>
     <!-- layui规范化用法 -->
     <script type="text/javascript">
