@@ -128,6 +128,15 @@ layui.use(['form', 'layer', 'jquery'], function () {
         type: 'get',
         success: function (res) {
             console.log(res)
+            $.each(res, function (i, val) {
+                // if (code == val.id) {
+                //     $('#flightcode').append('<option  value="' + val.id + '" selected>' + val.airname + '</option>')
+                // } else {
+                    $('.race').append('<option  value="' + val.id + '">' + val.name + '</option>')
+                // }
+                form.render('select'); //这个很重要
+            });
+
         }
     })
 
